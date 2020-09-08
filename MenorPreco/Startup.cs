@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using MenorPreco.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,6 +18,16 @@ namespace MenorPreco
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            using (var client = new DatabaseContext())
+            {
+                client.Database.EnsureCreated();
+            }
+
+            //Importação do CSV
+            using (var reader = new StreamReader(@"dataset.csv"))
+            {
+                
+            }
         }
 
         public IConfiguration Configuration { get; }
@@ -24,6 +36,7 @@ namespace MenorPreco
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddEntityFrameworkSqlite().AddDbContext<DatabaseContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

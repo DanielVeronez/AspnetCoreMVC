@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,7 +20,10 @@ namespace MenorPreco.Model
         public string DSC_PRODUTO { get; set; }
         public double VLR_UNITARIO { get; set; }
 
-        //Referencia externa
         public int ID_ESTABELECIMENTO { get; set; }
+
+        //Referencia externa
+        //[ForeignKey("Estabelecimentos")]
+        //public ICollection<EstabelecimentoModel> ESTABELECIMENTOS { get; set; }
     }
 }

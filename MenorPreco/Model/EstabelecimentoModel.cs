@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -22,5 +23,10 @@ namespace MenorPreco.Model
         public int COD_CEP { get; set; }
         public double NUM_LATITUDE { get; set; }
         public double NUM_LONGITUDE { get; set; }
+
+        public int COD_GTIN { get; set; }
+
+        //[ForeignKey("Produto")]
+        //public ProdutoModel PRODUTO { get; set; }
     }
 }
