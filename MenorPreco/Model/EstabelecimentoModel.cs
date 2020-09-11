@@ -21,8 +21,8 @@ namespace MenorPreco.Model
         public string NME_MUNICIPIO { get; set; }
         public string NME_SIGLA_UF { get; set; }
         public int COD_CEP { get; set; }
-        public double NUM_LATITUDE { get; set; }
-        public double NUM_LONGITUDE { get; set; }
+        public string NUM_LATITUDE { get; set; }
+        public string NUM_LONGITUDE { get; set; }
 
         public int COD_GTIN { get; set; }
 

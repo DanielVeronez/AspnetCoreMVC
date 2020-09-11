@@ -11,14 +11,14 @@ namespace MenorPreco.Model
     public class ProdutoModel : DbContext
     {
         [Key]
-        public int COD_GTIN { get; set; }
+        public string COD_GTIN { get; set; }
         public DateTime DAT_EMISSAO { get; set; }
         public int COD_TIPO_PAGAMENTO { get; set; }
-        public int COD_PRODUTO { get; set; }
+        public string COD_PRODUTO { get; set; }
         public int COD_NCM { get; set; }
-        public int COD_UNIDADE { get; set; }
+        public string COD_UNIDADE { get; set; }
         public string DSC_PRODUTO { get; set; }
-        public double VLR_UNITARIO { get; set; }
+        public string VLR_UNITARIO { get; set; }
 
         public int ID_ESTABELECIMENTO { get; set; }
 

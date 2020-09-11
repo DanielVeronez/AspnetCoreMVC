@@ -11,9 +11,15 @@ namespace MenorPreco.Database
     {
         public DbSet<ProdutoModel> Produtos { get; set; }
         public DbSet<EstabelecimentoModel> Estabelecimentos { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
-            optionsBuilder.UseSqlite("Filename=MenorPreco.db");
+            Database.EnsureCreated();
         }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlite("Filename=MenorPreco.db");
+        //}
     }
 }

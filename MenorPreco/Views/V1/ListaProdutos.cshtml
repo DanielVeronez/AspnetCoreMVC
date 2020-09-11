@@ -1,0 +1,47 @@
+﻿@model List<MenorPreco.Model.ProdutoModel>
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listagem de produtos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">GTIN</th>
+                    <th scope="col">Data Emissão</th>
+                    <th scope="col">Cod. Tip. Pagamento</th>
+                    <th scope="col">Cod. Produto</th>
+                    <th scope="col">Cod. NCM</th>
+                    <th scope="col">Unidade</th>
+                    <th scope="col">Descrissão</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Navegar GPS</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var produto in Model)
+                {
+                <tr>
+                    <th scope="row">@produto.COD_GTIN</th>
+                    <td>@produto.DAT_EMISSAO</td>
+                    <td>@produto.COD_TIPO_PAGAMENTO</td>
+                    <td>@produto.COD_PRODUTO</td>
+                    <td>@produto.COD_NCM</td>
+                    <td>@produto.COD_UNIDADE</td>
+                    <td>@produto.DSC_PRODUTO</td>
+                    <td>@produto.VLR_UNITARIO</td>
+                    <td><a href="/V1/GPS/@produto.ID_ESTABELECIMENTO"s class="btn">GPS</a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
